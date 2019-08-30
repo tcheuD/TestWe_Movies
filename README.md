@@ -1,4 +1,4 @@
-# TestWe
+# TestWe (temps recommandé: 1h30)
 
 ##Étape 1 : Installation
 1. Fork le projet
