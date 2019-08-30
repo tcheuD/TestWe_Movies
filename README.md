@@ -6,6 +6,8 @@
 3. Créez la base de donnée 'test'
 4. Créez les tables en ligne de commande ou via le fichier datas/test-cinemahd-database.sql
 5. Importez les données situées dans le fichier datas/test-cinemahd-datas.sql
+
+Rendu: Un repository git avec le code corrigé et vos modifications.
  
 ##Étape 2: Correction
 
