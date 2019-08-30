@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block container %}
+    <div>
+        <a href="{{ path("newShowing") }}" class="btn btn-success float-md-right">New Showing</a>
+    </div>
+    <div class="clearfix"></div>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Movie</th>
+                    <th>Date</th>
+                    <th>Places</th>
+                    <th>3D ?</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for showing in showings  %}
+                    <tr>
+                        <td>{{ showing.id }}</td>
+                        <td>{{ showing.movie.title }}</td>
+                        <td>{{ showing.date|date("d/m/Y h:i") }}</td>
+                        <td>{{ showing.room.nbPlaces }} places</td>
+                        <td>{{ (showing.is3D) ? "Yes" : "No"  }}</td>
+                        <td>
+                            <a href="{{ path("editShowing", {"showing": showing.id}) }}" class="btn btn-secondary btn-sm">Edit</a>
+                            <a href="{{ path("deleteShowing", {"showing": showing.id}) }}" class="btn btn-secondary btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

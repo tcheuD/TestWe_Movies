@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block container %}
+    <div>
+        <a href="{{ path("newType") }}" class="btn btn-success float-md-right">New Type</a>
+    </div>
+    <div class="clearfix"></div>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for type in types  %}
+                    <tr>
+                        <td>{{ type.id }}</td>
+                        <td>{{ type.name }}</td>
+                        <td>
+                            <a href="{{ path("editType", {"type": type.id}) }}" class="btn btn-secondary btn-sm">Edit</a>
+                            <a href="{{ path("deleteType", {"type": type.id}) }}" class="btn btn-secondary btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+# Learn more about services, parameters and containers at
+# https://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    movie_service:
+        class: AppBundle\Services\MovieService
+        calls:
+            - method: setEntityManager
+              arguments:
+                  - '@doctrine.orm.entity_manager'
+    type_service:
+        class: AppBundle\Services\TypeService
+        calls:
+            - method: setEntityManager
+              arguments:
+                  - '@doctrine.orm.entity_manager'
+    person_service:
+        class: AppBundle\Services\PersonService
+        calls:
+            - method: setEntityManager
+              arguments:
+                  - '@doctrine.orm.entity_manager'
+    room_service:
+        class: AppBundle\Services\RoomService
+        calls:
+            - method: setEntityManager
+              arguments:
+                  - '@doctrine.orm.entity_manager'
+    showing_service:
+        class: AppBundle\Services\ShowingService
+        calls:
+            - method: setEntityManager
+              arguments:
+                  - '@doctrine.orm.entity_manager'
