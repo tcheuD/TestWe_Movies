@@ -6,6 +6,7 @@
 2. Importez les données situées dans le fichier datas/test-cinemahd-datas.sql
  
 ##Étape 2: Correction
+
 On a trouvé plusieurs bugs dans l'application qui ont été remontés par les utilisateurs.
 Grâce aux retours que nous avons reçus, identifiez puis corrigez les divers problèmes sur l'application.
 
@@ -17,6 +18,7 @@ Voilà les retours utilisateur:
  - Enfin, on ne peux pas afficher la liste des films d'une personne, on a une erreur.
  
 ##Étape 3: Évolution
+
 Maintenance que les problèmes ont été résolus, on peux rajouter de nouvelle fonctionnalité. Une fonctionnalité qui nous a été demandé plusieurs fois est de pouvoir retirer une personne d'un film.
 Ajoutez cette fonctionnalité dans la modification d'un film.
 
