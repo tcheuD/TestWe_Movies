@@ -1,9 +1,11 @@
 # TestWe
 
 ##Étape 1 : Installation
-1. Créez la base de donnée 'test'
-2. Créez les tables en ligne de commande ou via le fichier datas/test-cinemahd-database.sql
-2. Importez les données situées dans le fichier datas/test-cinemahd-datas.sql
+1. Fork le projet
+2. Installer les dependances
+3. Créez la base de donnée 'test'
+4. Créez les tables en ligne de commande ou via le fichier datas/test-cinemahd-database.sql
+5. Importez les données situées dans le fichier datas/test-cinemahd-datas.sql
  
 ##Étape 2: Correction
 
