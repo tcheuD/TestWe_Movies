@@ -42,7 +42,7 @@ class Showing
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Room")
      * @ORM\JoinColumns({
-     *  @ORM\JoinColumn(name="room_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="room_id", referencedColumnName="id")
      * })
      */
     private $room;
@@ -52,7 +52,7 @@ class Showing
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Movie")
      * @ORM\JoinColumns({
-     *  @ORM\JoinColumn(name="movie_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="movie_id", referencedColumnName="id")
      * })
      */
     private $movie;

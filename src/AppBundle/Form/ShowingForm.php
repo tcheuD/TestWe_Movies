@@ -23,7 +23,7 @@ class ShowingForm extends AbstractType
             ])
             ->add('is3D', CheckboxType::class, [
                 "label" => "3D ?",
-                'mapped' => false
+                'required'   => false,
             ])
             ->add('movie', EntityType::class, [
                 "class" => Movie::class,
@@ -31,6 +31,7 @@ class ShowingForm extends AbstractType
             ])
             ->add('room', EntityType::class, [
                 "class" => Room::class,
+                'required' => true,
                 'choice_label' => function (Room $room) {
                     return $room->toString();
                 }

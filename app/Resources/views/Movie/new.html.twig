@@ -42,10 +42,32 @@
             counter++;
             list.data(' widget-counter', counter);
 
-            console.error("Echec de l'ajout de la personne");
-
             var newElem = $(list.attr('data-widget-tags')).html(newWidget);
             newElem.appendTo(list);
         });
+
+
+        jQuery(document).ready(function() {
+            $collectionHolder = $('#people-fields-list');
+
+            $collectionHolder.find('li').each(function() {
+                addPeopleFormDeleteLink($(this));
+            });
+
+        });
+
+        function addPeopleForm() {
+
+            addPeopleFormDeleteLink($newFormLi);
+        }
+
+        function addPeopleFormDeleteLink($tagFormLi) {
+            var $removeFormButton = $('<button type="button">Delete this person</button>');
+            $tagFormLi.append($removeFormButton);
+
+            $removeFormButton.on('click', function(e) {
+                $tagFormLi.remove();
+            });
+        }
     </script>
 {% endblock %}

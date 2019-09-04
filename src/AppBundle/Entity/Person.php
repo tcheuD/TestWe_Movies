@@ -55,7 +55,7 @@ class Person
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MovieHasPeople", mappedBy="person", cascade={"persist", "merge"})
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MovieHasPeople", mappedBy="person", cascade={"persist", "remove", "merge"})
      */
     private $movies;
 
@@ -195,5 +195,6 @@ class Person
             $this->movies->add($movie);
         }
     }
+
 }
 

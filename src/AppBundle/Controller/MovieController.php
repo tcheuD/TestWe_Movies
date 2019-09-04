@@ -4,12 +4,16 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Movie;
 use AppBundle\Form\MovieForm;
+use Doctrine\Common\Collections\ArrayCollection;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+
 
 /**
  * Class MovieController
@@ -61,11 +65,41 @@ class MovieController extends Controller
      */
     public function editAction(Request $request, Movie $movie)
     {
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $movie = $entityManager->getRepository(Movie::class)->find($movie->getId());
+
+        //$originalPeoples = new ArrayCollection();
+        //$originalPeoples = $movie->getPeople();
+
+       /** foreach ($movie->getPeople() as $people) {
+
+            $originalPeoples->add($people);
+                dump($people);
+        }**/
+
         $movieService = $this->container->get('movie_service');
         $form = $this->createForm(MovieForm::class, $movie);
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
+           /**
+            *
+             foreach ($originalPeoples as $people) {
+                if (false === $movie->getPeople()->contains($people)) {
+                    foreach ($movie->getPeople() as $foo) {
+                        if (false === $foo->contains($people)) {
+                            $people->geMovie()->removeElement($people); //TODO: move to MovieService
+                            $entityManager->persist($people);
+                        }
+                        die();
+                        //if (!in_array($movie->getPeople(), $people)) {
+
+                    }
+                }
+            }
+            **/
+
             $movieService->saveMovie($movie);
             return $this->redirect($this->generateUrl("listMovie"));
         }

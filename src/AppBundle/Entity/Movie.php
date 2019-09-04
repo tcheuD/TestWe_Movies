@@ -162,5 +162,10 @@ class Movie
         }
     }
 
+    public function removePeople($people)
+    {
+        $this->people->removeElement($people);
+    }
+
 }
 

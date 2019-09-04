@@ -34,6 +34,7 @@ class MovieForm extends AbstractType
             ->add('people', CollectionType::class, array(
                 'type' => new MovieHasPeopleForm(),
                 'allow_add' => true,
+                'allow_delete' => true,
                 'prototype' => true,
                 'prototype_name' => '__opt_prot__'
             ))
